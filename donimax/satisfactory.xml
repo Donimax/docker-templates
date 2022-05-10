@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="1.0.1">
+  <Name>Satisfactory</Name>
+  <Repository>donimax/satisfactory-docker:latest</Repository>
+  <Registry>https://hub.docker.com/r/donimax/satisfactory-docker/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Donimax/satisfactory-docker/</Support>
+  <Project>https://www.satisfactorygame.com/</Project>
+  <Beta>true</Beta>
+  <Overview>This is a Dockerized version of the Satisfactory dedicated server..&#xD;
+&#xD;
+SETTINGS: The first player that connects to the server becomes administrator, edit the server settings and can create a game.&#xD;
+&#xD;
+ATTENTION: First Startup can take very long since it downloads the gameserver files!&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL>false</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/donimax/docker-templates/master/donimax/images/satisfactory.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <Requires/>
+  <Config Name="ServerFiles" Target="/opt/docker/satisfactory/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/satisfactory-docker</Config>
+  <Config Name="UDP Game Port" Target="7777" Default="" Mode="udp" Description="UDP Game Port( This port can be redirected freely)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
+  <Config Name="UDP Server Query Port" Target="15777" Default="" Mode="udp" Description="UDP Query Port (This is the port that you need to enter in the game when you first connect to a dedicated server. This port can be redirected freely.)." Type="Port" Display="always" Required="true" Mask="false">15777</Config>
+  <Config Name="UDP Beacon Port" Target="15000" Default="" Mode="udp" Description="UDP Beacon Port (This port cannot be redirected at the moment. It is automatically incremented if multiple instances of the server are launched and the default is in use already.)" Type="Port" Display="always" Required="true" Mask="false">15000</Config>
+  <Config Name="SERVERIP" Target="SERVERIP" Default="0.0.0.0" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"></Config>
+  <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"></Config>
+  <Config Name="MAXPLAYERS" Target="MAXPLAYERS" Default="8" Mode="" Description="Allowed Max Player" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="STEAMBETA" Target="STEAMBETA" Default="false" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Name="SKIPUPDATE" Target="SKIPUPDATE" Default="false" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false"></Config>
+  <Config Name="STEAMAPPID" Target="STEAMAPPID" Default="1690800" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"></Config>
+</Container>
