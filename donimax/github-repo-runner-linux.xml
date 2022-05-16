@@ -23,7 +23,7 @@
   <Config Name="REPO_URL" Target="REPO_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="RUNNER_NAME" Target="RUNNER_NAME" Default="docker-runner-unraid" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="/tmp/github-runner-repo" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="RUNNER_GROUP" Target="RUNNER_GROUP" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Lables" Target="LABELS" Default="linux,x64" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 </Container>
