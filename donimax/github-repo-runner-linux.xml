@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="1.0.0">
+  <Name>Github Repo Runner Linux</Name>
+  <Repository>myoung34/github-runner:debian-bullseye</Repository>
+  <Registry>https://hub.docker.com/r/myoung34/github-runner</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/myoung34/docker-github-actions-runner</Support>
+  <Project>https://docs.github.com/en/actions/hosting-your-own-runners</Project>
+  <Beta>true</Beta>
+  <Category>Cloud:</Category>
+  <WebUI/>
+  <TemplateURL>false</TemplateURL>
+  <ExtraParams>--restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <Requires/>
+  <Config Name="Docker sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="tmp" Target="/tmp/github-runner-repo" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/tmp/github-runner-repo</Config>
+
+  <Config Name="REPO_URL" Target="REPO_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_NAME" Target="RUNNER_NAME" Default="docker-runner-unraid" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_GROUP" Target="RUNNER_GROUP" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Lables" Target="LABELS" Default="linux,x64" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+</Container>
