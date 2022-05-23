@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="1.0.0">
+<Container version="1.0.1">
   <Name>Github Repo Runner Linux</Name>
   <Repository>myoung34/github-runner:debian-bullseye</Repository>
   <Registry>https://hub.docker.com/r/myoung34/github-runner</Registry>
@@ -21,13 +21,13 @@
   <Requires/>
   <Config Name="Docker sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="tmp" Target="/tmp/github-runner-repo" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/tmp/github-runner-repo</Config>
-  <Config Name="ACCESS_TOKEN" Target="ACCESS_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="flase" Mask="false"></Config>
-  <Config Name="REPO_URL" Target="REPO_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="RUNNER_NAME" Target="RUNNER_NAME" Default="docker-runner-unraid" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="flase" Mask="false"></Config>
-  <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="/tmp/github-runner-repo" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="RUNNER_GROUP" Target="RUNNER_GROUP" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="RUNNER_SCOPE" Target="RUNNER_SCOPE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="ORG_NAME" Target="ORG_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="Lables" Target="LABELS" Default="linux,x64" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ACCESS_TOKEN" Target="ACCESS_TOKEN" Default="" Mode="" Description="A github PAT to use to generate RUNNER_TOKEN dynamically at container start. Not using this requires a valid RUNNER_TOKEN" Type="Variable" Display="always" Required="null" Mask="false"></Config>
+  <Config Name="REPO_URL" Target="REPO_URL" Default="" Mode="" Description="If using a non-organization runner this is the full repository url to register under such as 'https://github.com/myoung34/repo'" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_NAME" Target="RUNNER_NAME" Default="docker-runner-unraid" Mode="" Description="The name of the runner to use. Supercedes (overrides) RUNNER_NAME_PREFIX" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="RUNNER_TOKEN&#9;If not using a PAT for ACCESS_TOKEN this will be the runner token provided by the Add Runner UI (a manual process). Note: This token is short lived and will change frequently. ACCESS_TOKEN is likely preferred." Type="Variable" Display="always" Required="null" Mask="false"/>
+  <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="/tmp/github-runner-repo" Mode="" Description="The working directory for the runner. Runners on the same host should not share this directory. Default is '/_work'. This must match the source path for the bind-mounted volume at RUNNER_WORKDIR, in order for container actions to access files." Type="Variable" Display="always" Required="false" Mask="false">/tmp/github-runner-repo</Config>
+  <Config Name="RUNNER_GROUP" Target="RUNNER_GROUP" Default="" Mode="" Description="Name of the runner group to add this runner to (defaults to the default runner group)&#13;&#10;" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="RUNNER_SCOPE" Target="RUNNER_SCOPE" Default="repo" Mode="" Description="The scope the runner will be registered on. Valid values are repo, org and ent. For 'org' and 'enterprise', ACCESS_TOKEN is required and REPO_URL is unneccesary. If 'org', requires ORG_NAME; if 'enterprise', requires ENTERPRISE_NAME. Default is 'repo'." Type="Variable" Display="always" Required="false" Mask="false">repo</Config>
+  <Config Name="ORG_NAME" Target="ORG_NAME" Default="" Mode="" Description="The organization name for the runner to register under. Requires RUNNER_SCOPE to be 'org'. No default value." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Lables" Target="LABELS" Default="linux,x64" Mode="" Description="A comma separated string to indicate the labels." Type="Variable" Display="always" Required="false" Mask="false">linux,x64</Config>
 </Container>
