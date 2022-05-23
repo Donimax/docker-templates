@@ -21,10 +21,13 @@
   <Requires/>
   <Config Name="Docker sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="tmp" Target="/tmp/github-runner-repo" Default="" Mode="rw" Description="" Type="Path" Display="hidden" Required="true" Mask="false">/tmp/github-runner-repo</Config>
+  <Config Name="ACCESS_TOKEN" Target="ACCESS_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="flase" Mask="false"></Config>
   <Config Name="REPO_URL" Target="REPO_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="RUNNER_NAME" Target="RUNNER_NAME" Default="docker-runner-unraid" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUNNER_TOKEN" Target="RUNNER_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="flase" Mask="false"></Config>
   <Config Name="RUNNER_WORKDIR" Target="RUNNER_WORKDIR" Default="/tmp/github-runner-repo" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="RUNNER_GROUP" Target="RUNNER_GROUP" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="RUNNER_SCOPE" Target="RUNNER_SCOPE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ORG_NAME" Target="ORG_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Lables" Target="LABELS" Default="linux,x64" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 </Container>
