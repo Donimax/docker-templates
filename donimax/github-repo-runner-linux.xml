@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="1.0.1">
+<Container version="2">
   <Name>Github Repo Runner Linux</Name>
   <Repository>myoung34/github-runner:debian-bullseye</Repository>
   <Registry>https://hub.docker.com/r/myoung34/github-runner</Registry>
