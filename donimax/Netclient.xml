@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Netclient</Name>
+  <Repository>gravitl/netclient:v0.17.1</Repository>
+  <Registry>https://hub.docker.com/r/gravitl/netclient</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Project>https://www.netmaker.org/</Project>
+  <Overview>Netmaker is a platform for creating fast and secure virtual networks with WireGuard.</Overview>
+  <Category>Network:VPN</Category>
+  <WebUI/>
+  <Icon>https://raw.githubusercontent.com/gravitl/netmaker-docs/master/images/netmaker-github/netmaker-teal.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1671878342</DateInstalled>
+  <Requires/>
+  <Config Name="Config" Target="/etc/netclient/" Default="" Mode="rw" Description="config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/netclient</Config>
+  <Config Name="Token" Target="TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
