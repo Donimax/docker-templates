@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Bitnami_Postgres15</Name>
+  <Repository>bitnami/postgresql:15</Repository>
+  <Registry>https://hub.docker.com/r/bitnami/postgresql</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>PostgreSQL (Postgres) is an open source object-relational database known for reliability and data integrity. ACID-compliant, it supports foreign keys, joins, views, triggers and stored procedures.</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/donimax/docker-templates/master/donimax/images/PostgreSQL.png</Icon>
+  <ExtraParams>--health-cmd='pg_isready -U $POSTGRES_USER' --health-interval=10s --health-timeout=5s --health-start-period=10s --health-retries=5</ExtraParams>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="postgres" Mode="" Description="Initial superuser name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="postgres" Mode="" Description="Initial database name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Database Storage Path" Target="/bitnami/postgresql" Default="" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/postgresql15</Config>
+  <Config Name="PostgreSQL access port" Target="5432" Default="5432" Mode="tcp" Description="PostgreSQL TCP connection port" Type="Port" Display="always-hide" Required="true" Mask="false">5432</Config>
+  <Config Name="Enable TLS" Target="POSTGRESQL_ENABLE_TLS" Default="no" Mode="" Description="Whether to enable TLS for traffic or not. Defaults to no" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="TLS cert file" Target="POSTGRESQL_TLS_CERT_FILE" Default="" Mode="" Description="File containing the certificate file for the TLS traffic. No defaults." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="TLS key file" Target="POSTGRESQL_TLS_KEY_FILE" Default="" Mode="" Description="File containing the key for certificate. No defaults." Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
